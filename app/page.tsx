@@ -62,7 +62,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="rounded-xl overflow-hidden border border-[var(--border)]">
+        <div className="rounded-xl overflow-hidden border border-[var(--border)] ring-0 focus:ring-0 outline-none">
           <img
             src="/Logo.PNG"
             alt="Guenther Services"
