@@ -64,8 +64,8 @@ export default function Home() {
 
         <div className="rounded-xl overflow-hidden border border-[var(--border)]">
           <img
-            src="/hero-placeholder.jpg"
-            alt="Handyman working"
+            src="/Logo.PNG"
+            alt="Guenther Services"
             className="w-full h-auto object-cover"
           />
         </div>
