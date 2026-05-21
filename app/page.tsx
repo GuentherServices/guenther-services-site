@@ -66,7 +66,7 @@ export default function Home() {
           <img
             src="/Logo.PNG"
             alt="Guenther Services"
-            className="w-full h-auto object-cover"
+            className="w-full h-auto object-cover ring-0 focus:ring-0 outline-none"
           />
         </div>
       </section>
