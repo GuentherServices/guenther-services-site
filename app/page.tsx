@@ -1,68 +1,59 @@
+import Link from "next/link";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+
 export default function Home() {
   return (
-    <main className="bg-[var(--background)] text-[var(--foreground)]">
+    <main className="bg-[var(--background)] text-[var(--foreground)] min-h-screen flex flex-col">
+      <Header />
 
-      {/* NAVBAR */}
-      <nav className="w-full border-b border-[var(--border)] bg-[var(--background)]">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-          <div className="text-xl font-bold">Guenther Services</div>
-
-          <div className="hidden md:flex gap-8 text-[var(--foreground)]">
-            <a href="/" className="hover:text-[var(--primary)]">Home</a>
-            <a href="/services" className="hover:text-[var(--primary)]">Services</a>
-            <a href="/booking" className="hover:text-[var(--primary)]">Booking</a>
-            <a href="/gallery" className="hover:text-[var(--primary)]">Gallery</a>
-            <a href="/about" className="hover:text-[var(--primary)]">About</a>
-            <a href="/contact" className="hover:text-[var(--primary)]">Contact</a>
-            <a href="/reviews" className="hover:text-[var(--primary)]">Reviews</a>
-          </div>
-
-          <div className="flex items-center gap-4">
-            <span className="text-[var(--foreground)]">(513) 630‑3818</span>
-            <a
-              href="/booking"
-              className="bg-[var(--primary)] text-[var(--primary-foreground)] px-4 py-2 rounded-lg font-semibold hover:opacity-90"
-            >
-              Book Now
-            </a>
-          </div>
-        </div>
-      </nav>
-
-      {/* HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-6 py-24 grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+      {/* HERO */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center flex-1">
         <div>
-          <h1 className="text-5xl font-bold mb-6">Your Home, Perfected.</h1>
-          <p className="text-lg text-[var(--muted-foreground)] mb-10">
-            From minor repairs to full seasonal maintenance — Guenther Services delivers
-            reliable, expert handyman work with transparent pricing and tidy results.
+          <p className="text-sm uppercase tracking-[0.2em] text-[var(--muted-foreground)] mb-3">
+            Your reliable handyman for the whole home.
+          </p>
+          <h1 className="text-4xl sm:text-5xl font-bold mb-4">
+            Reliable handyman and home services done right.
+          </h1>
+          <p className="text-[var(--muted-foreground)] text-base sm:text-lg mb-8">
+            From gutters to garages—done right the first time. Fast fixes, solid
+            workmanship, and local service you can count on.
           </p>
 
-          <div className="flex flex-wrap gap-4">
-            <a
+          <div className="flex flex-wrap gap-4 mb-6">
+            <Link
               href="/booking"
               className="bg-[var(--primary)] text-[var(--primary-foreground)] px-6 py-3 rounded-lg font-semibold hover:opacity-90"
             >
-              Book a Service
-            </a>
-
-            <a
-              href="/contact"
+              Get a Quote
+            </Link>
+            <Link
+              href="/booking"
               className="bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-lg font-semibold hover:opacity-90"
             >
-              Get a Quote
-            </a>
-
+              Book Now
+            </Link>
             <a
               href="sms:5136303818"
               className="bg-[var(--secondary)] text-[var(--secondary-foreground)] px-6 py-3 rounded-lg font-semibold hover:opacity-90"
             >
-              Text Us
+              Text / Message Us
             </a>
+          </div>
+
+          <div className="flex flex-wrap gap-4 text-xs text-[var(--muted-foreground)]">
+            <span className="inline-flex items-center gap-2 bg-[var(--card)] px-3 py-2 rounded-full">
+              <span className="h-2 w-2 rounded-full bg-[var(--primary)]" />
+              Fast response · Same‑week availability (edit)
+            </span>
+            <span className="inline-flex items-center gap-2 bg-[var(--card)] px-3 py-2 rounded-full">
+              Clear pricing & tidy work
+            </span>
           </div>
         </div>
 
-        <div className="rounded-xl overflow-hidden border border-[var(--border)] ring-0 focus:ring-0 outline-none">
+        <div className="rounded-xl overflow-hidden border-0 ring-0 focus:ring-0 outline-none">
           <img
             src="/Logo.PNG"
             alt="Guenther Services"
@@ -71,168 +62,107 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHAT WE DO */}
-      <section className="py-24 bg-[var(--card)] border-t border-[var(--border)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">What We Do</h2>
-          <p className="text-center text-[var(--muted-foreground)] mb-16">
+      {/* QUICK SERVICE HIGHLIGHTS */}
+      <section className="bg-[var(--card)] border-t border-[var(--border)] py-16">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">
             A complete ecosystem of home services.
+          </h2>
+          <p className="text-[var(--muted-foreground)] mb-10">
+            One trusted local pro for repairs, installs, indoor and outdoor
+            projects, and seasonal maintenance.
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
-              { title: "Repairs & Fixes", desc: "Drywall, doors, faucets, and everything in between." },
-              { title: "Installations", desc: "TV mounting, shelves, fixtures, and security system setup." },
-              { title: "Painting & Touch-Ups", desc: "Interior walls, trim, and accent features." },
-              { title: "Basic Plumbing", desc: "Faucet swaps, toilet repairs, leak fixes." },
-              { title: "Outdoor Services", desc: "Gutter cleaning, fence repair, deck maintenance, yard cleanup." },
-              { title: "Furniture & Moving", desc: "Assembly, deconstruction, and move-in/out services." },
+              {
+                title: "Handyman & Repairs",
+                desc: "Drywall patches, doors, faucets, fixtures, and honey‑do lists.",
+              },
+              {
+                title: "Installations",
+                desc: "TV mounting, shelves, hardware, light fixtures, and more.",
+              },
+              {
+                title: "Indoor Services",
+                desc: "Painting, touch‑ups, caulking, trim, and small updates.",
+              },
+              {
+                title: "Outdoor Services",
+                desc: "Gutter cleaning, yard cleanup, fence and deck touch‑ups.",
+              },
+              {
+                title: "Seasonal & Maintenance",
+                desc: "Seasonal checks, filter swaps, prep and cleanup.",
+              },
+              {
+                title: "Basic Plumbing/Electrical",
+                desc: "Non‑permit fixture swaps and minor fixes. (No major/permit work.)",
+              },
             ].map((item) => (
               <div
                 key={item.title}
-                className="bg-[var(--background)] p-8 rounded-xl border border-[var(--border)]"
+                className="bg-[var(--background)] border border-[var(--border)] rounded-xl p-6"
               >
-                <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                <p className="text-[var(--muted-foreground)]">{item.desc}</p>
-              </div>
-            ))}
-
-          </div>
-        </div>
-      </section>
-
-      {/* TESTIMONIALS */}
-      <section className="py-24 bg-[var(--background)]">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center mb-14">What Our Clients Say</h2>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-            {[
-              {
-                quote:
-                  "Guenther fixed our leaky faucet and mounted our TV the same day. Solid guy, clean work, fair price.",
-                name: "Mike D.",
-                location: "Oxford, OH",
-              },
-              {
-                quote:
-                  "Had furniture assembled and repairs knocked out in one visit. On time, professional, spotless work.",
-                name: "Brittany R.",
-                location: "Oxford, OH",
-              },
-              {
-                quote:
-                  "Patched our drywall and you can’t even tell it was damaged. Will use again for sure.",
-                name: "Tom K.",
-                location: "Fairfield, OH",
-              },
-            ].map((t) => (
-              <div
-                key={t.name}
-                className="bg-[var(--card)] p-8 rounded-xl border border-[var(--border)]"
-              >
-                <p className="text-[var(--foreground)] mb-4">“{t.quote}”</p>
-                <p className="font-semibold text-[var(--primary)]">
-                  {t.name} — {t.location}
+                <h3 className="font-semibold mb-2">{item.title}</h3>
+                <p className="text-[var(--muted-foreground)] text-sm">
+                  {item.desc}
                 </p>
               </div>
             ))}
-
           </div>
         </div>
       </section>
 
       {/* SERVICE AREAS */}
-      <section className="py-24 bg-[var(--card)] text-center border-t border-[var(--border)]">
-        <h2 className="text-3xl font-bold mb-6">Service Areas</h2>
-        <p className="text-[var(--muted-foreground)] mb-10">
-          Proudly serving Oxford and the surrounding Butler County communities.
-        </p>
-
-        <div className="flex flex-wrap justify-center gap-4">
-          {["Oxford, OH", "College Corner, OH", "Ross, OH", "Fairfield, OH"].map((city) => (
-            <span
-              key={city}
-              className="bg-[var(--background)] px-6 py-3 rounded-lg border border-[var(--border)]"
-            >
-              {city}
-            </span>
-          ))}
+      <section className="py-16 bg-[var(--background)] border-t border-[var(--border)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="text-2xl sm:text-3xl font-bold mb-4">Service areas</h2>
+          <p className="text-[var(--muted-foreground)] mb-8">
+            Proudly serving Oxford and the surrounding Butler County
+            communities. Edit this list as needed.
+          </p>
+          <div className="flex flex-wrap justify-center gap-3">
+            {["Oxford, OH", "College Corner, OH", "Ross, OH", "Fairfield, OH"].map(
+              (city) => (
+                <span
+                  key={city}
+                  className="bg-[var(--card)] border border-[var(--border)] px-4 py-2 rounded-full text-sm"
+                >
+                  {city}
+                </span>
+              )
+            )}
+          </div>
         </div>
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-[var(--background)] text-center">
-        <h2 className="text-3xl font-bold mb-4">Ready to Start?</h2>
-        <p className="text-[var(--muted-foreground)] mb-8">
-          Tell us what you need — we’ll handle the rest.
+      <section className="py-16 bg-[var(--card)] text-center border-t border-[var(--border)]">
+        <h2 className="text-2xl sm:text-3xl font-bold mb-3">
+          Ready to start?
+        </h2>
+        <p className="text-[var(--muted-foreground)] mb-6">
+          Tell us what you need—we’ll handle the rest. Send a quick message or
+          book a visit.
         </p>
-
-        <div className="flex justify-center gap-4">
-          <a
+        <div className="flex justify-center gap-4 flex-wrap">
+          <Link
             href="/booking"
-            className="bg-[var(--primary)] text-[var(--primary-foreground)] px-8 py-3 rounded-lg font-semibold hover:opacity-90"
+            className="bg-[var(--primary)] text-[var(--primary-foreground)] px-6 py-3 rounded-lg font-semibold hover:opacity-90"
           >
             Book a Service
-          </a>
-
-          <a
+          </Link>
+          <Link
             href="/contact"
-            className="bg-[var(--foreground)] text-[var(--background)] px-8 py-3 rounded-lg font-semibold hover:opacity-90"
+            className="bg-[var(--foreground)] text-[var(--background)] px-6 py-3 rounded-lg font-semibold hover:opacity-90"
           >
-            Get a Quote
-          </a>
+            Request a Quote
+          </Link>
         </div>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-[var(--background)] border-t border-[var(--border)] py-16 text-[var(--muted-foreground)]">
-        <div className="max-w-6xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-10">
-
-          <div>
-            <h3 className="text-xl font-bold text-[var(--foreground)] mb-4">Guenther Services</h3>
-            <p>Reliable handyman and home services done right. Locally owned and committed to quality craftsmanship.</p>
-          </div>
-
-          <div>
-            <h4 className="text-[var(--foreground)] font-semibold mb-3">Quick Links</h4>
-            <ul className="space-y-2">
-              <li><a href="/services">Services</a></li>
-              <li><a href="/booking">Book a Service</a></li>
-              <li><a href="/gallery">Gallery</a></li>
-              <li><a href="/about">About Us</a></li>
-              <li><a href="/reviews">Reviews</a></li>
-              <li><a href="/policies">Policies</a></li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[var(--foreground)] font-semibold mb-3">Service Areas</h4>
-            <ul className="space-y-2">
-              <li>Oxford</li>
-              <li>College Corner</li>
-              <li>Ross</li>
-              <li>Fairfield</li>
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="text-[var(--foreground)] font-semibold mb-3">Contact</h4>
-            <p>(513) 630‑3818</p>
-            <p>guentherservices@outlook.com</p>
-            <p>Oxford, Ohio</p>
-            <p>Mon–Fri 8AM–6PM · Sat 9AM–3PM</p>
-          </div>
-
-        </div>
-
-        <p className="text-center text-[var(--muted-foreground)] mt-10">
-          © 2026 Guenther Services. All rights reserved.
-        </p>
-      </footer>
-
+      <Footer />
     </main>
   );
 }
