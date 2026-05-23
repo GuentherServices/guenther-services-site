@@ -1,9 +1,10 @@
+import type { Metadata } from "next";
 import "./globals.css";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "Guenther Services | Reliable Handyman & Home Services",
   description:
-    "Local handyman and home services in Oxford, OH. Repairs, installations, seasonal maintenance, and more.",
+    "From minor repairs to full seasonal maintenance — Guenther Services delivers reliable, expert handyman work with transparent pricing and tidy results.",
 };
 
 export default function RootLayout({
@@ -13,7 +14,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-[var(--background)] text-[var(--foreground)]">
+      <body className="min-h-screen bg-[var(--bg)] text-[var(--text-main)]">
         {children}
       </body>
     </html>
