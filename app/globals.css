@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Your theme variables */
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --card: #f7f7f7;
+  --border: #e5e5e5;
+  --primary: #2563eb;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #111111;
+  --muted-foreground: #6b7280;
+  --input: #d1d5db;
+}
