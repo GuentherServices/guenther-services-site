@@ -5,13 +5,14 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col bg-[var(--bg)]">
+    <div className="flex min-h-screen flex-col bg-[var(--bg)] text-[var(--text-main)]">
       <Header />
 
       <main className="flex-1">
-        {/* Hero */}
+        {/* HERO */}
         <section className="border-b border-[var(--border-subtle)] bg-[radial-gradient(circle_at_top,_#1f2937_0,_#050816_55%)]">
           <div className="mx-auto flex max-w-6xl flex-col gap-10 px-4 py-14 md:flex-row md:items-center">
+            {/* Left */}
             <div className="flex-1 space-y-5">
               <p className="text-xs font-semibold uppercase tracking-[0.25em] text-[var(--accent)]">
                 Oxford · Butler County
@@ -20,9 +21,9 @@ export default function Home() {
                 Your Home, <span className="text-[var(--accent)]">Perfected.</span>
               </h1>
               <p className="max-w-xl text-sm leading-relaxed text-[var(--text-muted)]">
-                From minor repairs to full seasonal maintenance — Guenther
-                Services delivers reliable, expert handyman work with
-                transparent pricing and tidy results. For all your needs.
+                From minor repairs to full seasonal maintenance — Guenther Services
+                delivers reliable, expert handyman work with transparent pricing and
+                tidy results. For all your needs.
               </p>
               <div className="flex flex-wrap gap-3 pt-2">
                 <Link
@@ -46,6 +47,7 @@ export default function Home() {
               </div>
             </div>
 
+            {/* Right – logo instead of faucet, NO badge */}
             <div className="flex-1">
               <div className="relative mx-auto flex h-64 w-64 items-center justify-center rounded-3xl border border-[var(--border-subtle)] bg-[var(--bg-soft)] shadow-[0_0_60px_rgba(34,197,94,0.25)]">
                 <Image
@@ -61,14 +63,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* What We Do */}
+        {/* WHAT WE DO – first row */}
         <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-soft)]">
           <div className="mx-auto max-w-6xl px-4 py-12 space-y-6">
             <div>
               <h2 className="text-xl font-semibold">What We Do</h2>
               <p className="text-sm text-[var(--text-muted)]">
-                Everything your home needs — organized, transparent, and done
-                right the first time.
+                A complete ecosystem of home services.
               </p>
             </div>
 
@@ -101,7 +102,39 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* WHAT WE DO – second row (Basic Plumbing / Outdoor / Furniture & Moving) */}
+        <section className="border-b border-[var(--border-subtle)] bg-[var(--bg)]">
+          <div className="mx-auto max-w-6xl px-4 py-12 space-y-6">
+            <div className="grid gap-5 md:grid-cols-3">
+              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--card)] p-5">
+                <h3 className="text-sm font-semibold mb-2 text-[var(--accent)]">
+                  Basic Plumbing
+                </h3>
+                <p className="text-sm text-[var(--text-muted)]">
+                  Faucet swaps, toilet repairs, leak fixes.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--card)] p-5">
+                <h3 className="text-sm font-semibold mb-2 text-[var(--accent)]">
+                  Outdoor Services
+                </h3>
+                <p className="text-sm text-[var(--text-muted)]">
+                  Gutter cleaning, fence repair, deck maintenance, and yard cleanup.
+                </p>
+              </div>
+              <div className="rounded-2xl border border-[var(--border-subtle)] bg-[var(--card)] p-5">
+                <h3 className="text-sm font-semibold mb-2 text-[var(--accent)]">
+                  Furniture & Moving
+                </h3>
+                <p className="text-sm text-[var(--text-muted)]">
+                  Assembly, deconstruction, and move-in/out services.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* TESTIMONIALS */}
         <section className="border-b border-[var(--border-subtle)] bg-[var(--bg)]">
           <div className="mx-auto max-w-6xl px-4 py-12 space-y-6">
             <div>
@@ -151,7 +184,7 @@ export default function Home() {
           </div>
         </section>
 
-        {/* FAQ */}
+        {/* FAQ (from your other screenshot) */}
         <section className="border-b border-[var(--border-subtle)] bg-[var(--bg-soft)]">
           <div className="mx-auto max-w-6xl px-4 py-12 space-y-6">
             <div>
@@ -177,14 +210,13 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Service Areas + CTA */}
+        {/* SERVICE AREAS + CTA */}
         <section className="border-b border-[var(--border-subtle)] bg-[var(--bg)]">
           <div className="mx-auto max-w-6xl px-4 py-12 grid gap-8 md:grid-cols-2">
             <div>
               <h2 className="text-xl font-semibold mb-2">Service Areas</h2>
               <p className="text-sm text-[var(--text-muted)] mb-3">
-                Proudly serving Oxford and the surrounding Butler County
-                communities.
+                Proudly serving Oxford and the surrounding Butler County communities.
               </p>
               <p className="text-sm text-[var(--text-main)]">
                 Oxford, OH · College Corner, OH · Ross, OH · Fairfield, OH
